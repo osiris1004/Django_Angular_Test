@@ -1,0 +1,5 @@
+1) open SQLLiteStudio
+2) click database, add database
+3) load sql file in our django project
+4) create table by creating module in our django project
+5) write sql queries by opening sql and editor (Alt+E) on our database

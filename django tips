@@ -1,0 +1,27 @@
+CORS is a mechanism to allow interaction with resources hosted on different domains. 
+For instance, one of the most common scenarios to apply it is with Ajax requests.
+by deafout django comes with a security feature which block the api request comming from
+diffrent domain.
+
+- install django cors package usin 
+*---pip install django-cors-headers---*
+
+
+- (settings.py)register the cors module by adding an entry in the 
+    INSTALLED_APPS='corsheaders' and in
+    MIDDLEWARE = 'corsheaders.middleware.CorsMiddleWare'
+
+
+- specify which domains we need to allow
+    CORS_ORIGIN_ALLOW_ALL ="True"
+
+
+-App are those little components that together make up your project. They are the features of your project. 
+In our case (shopping site) it would be:
+    Cart :- Which would have a logic for user selected items for purchase.
+    Products :- Which would have a logic for products that the site is selling.
+    Profile:- Which would have a logic for user information. 
+django apps are created using 
+*---python manage.py startapp EmployeeApp---*
+
+-Register our app in settings.py

@@ -1,0 +1,5 @@
+1) To create a project in angular use the following command line
+in node.js
+*---------npm install -g @angular/cli---------*
+2) Verify the version of angular
+*---------ng --version---------*
