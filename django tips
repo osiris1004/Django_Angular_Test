@@ -1,3 +1,6 @@
+from pkg_resources import EggMetadata
+
+
 CORS is a mechanism to allow interaction with resources hosted on different domains. 
 For instance, one of the most common scenarios to apply it is with Ajax requests.
 by deafout django comes with a security feature which block the api request comming from
@@ -13,7 +16,7 @@ diffrent domain.
 
 
 - specify which domains we need to allow
-    CORS_ORIGIN_ALLOW_ALL ="True"
+    CORS_ORIGIN_ALLOW_ALL =True
 
 
 -App are those little components that together make up your project. They are the features of your project. 
@@ -24,4 +27,26 @@ In our case (shopping site) it would be:
 django apps are created using 
 *---python manage.py startapp EmployeeApp---*
 
--Register our app in settings.py
+-   Register our app in settings.py (to consiter the app in your project, specify it)
+    INSTALLED_APPS='appName.apps.AppclassName' Eg
+    INSTALLED_APPS='EmployeeApp.apps.EmployeeappConfig'
+
+    register rest_framework package
+    INSTALLED_APPS='rest_framework'
+
+
+-create the models needed for our app
+    A Django model is the built-in feature that Django uses to create tables, their fields, 
+    and various constraints
+
+
+- the command below generates the SQL commands for apps.
+*---python manage.py makemigrations EmployeeApp---*
+
+the command below execute those commands in your database file. So tables are  created after    
+*---python manage.py migrate EmployeeApp---*
+
+
+-Serialization is converting data structure(a byte, array, linked list, object) into a format that can be store.
+
+-(views) write the api methode for a model views (department screen)
