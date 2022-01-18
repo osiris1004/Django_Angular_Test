@@ -3,3 +3,46 @@ in node.js
 *---------npm install -g @angular/cli---------*
 2) Verify the version of angular
 *---------ng --version---------*
+3) create angular project. create it in a folder ley say UI
+*---------ng new appName(we nnpmame ours angular10)---------*
+4) skip the routing featuer it will be done latter
+5)Run the project 
+*---------ng serve --open ---------*
+5) create a component
+*---------ng generate component componentName ---------*
+6) create a child component
+*---------ng generate component componentName/componentName ---------*
+7) create a services
+a services a code to perform somthing and in whcih it can be resused. no need to code it again
+*---------ng generate service serviceName ---------*
+8)import your service in to module and add the service name in provider :[servicesName]
+
+9) complete the code in share.service file so that we can consume all the api methode
+    -import {HttpClientModule} from '@angular/common/http';
+    -import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+    -imports: [
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+10) routing is navigating to a partigular screen using url  
+
+
+___________________ANGULAT DIRACTORY_________________________________
+**package.json**: it conatin all the packages, modeul or dependency
+    need for this project
+**angular.json**: conatain all the configuration  option, for serving, testing and buildin =g this progect
+
+**index.html**: it is the file which get render when runing the app
+
+**app.module.ts**: is is an entry or a way to import all the modules, new component or services we created in the angular progetect
+
+**app.component calles app** is the root component. we can add any number of child components. all of them will reside in tis folder app
+
+**app.component.html**it is the html containt of the root component
+
+**app.component.ts**it contain all the functionalities writen in typescript or js. these functionalities will be used by **app.component.html**
+
+**app.component.css**contain all the styling need for our app.component.html
+
+**style.css**contain all the styling need to be apply to all component
