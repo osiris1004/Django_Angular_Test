@@ -1,3 +1,4 @@
+import {classNameComponent} path..
 1) To create a project in angular use the following command line
 in node.js
 *---------npm install -g @angular/cli---------*
@@ -25,7 +26,9 @@ a services a code to perform somthing and in whcih it can be resused. no need to
     FormsModule,
     ReactiveFormsModule
   ],
-10) routing is navigating to a partigular screen using url  
+10) routing is navigating to a partigular screen using url. 
+    -set up rout in  app-routing.module
+    -add <router-outlet> </router-outlet> at the end of your component and it all. this will trigger the route
 
 
 ___________________ANGULAT DIRACTORY_________________________________

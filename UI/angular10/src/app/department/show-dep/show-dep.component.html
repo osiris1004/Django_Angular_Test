@@ -1,1 +1,63 @@
-<p>show-dep works!</p>
+<!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="addClick()">
+    <!--(click)="addclick" attribut enable us to call execute our funtion made
+     in our show-dep.component.ts-->
+    Add Books
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+          <!-- {{ModalTitle}} display the header title we set on show-dep.component.ts-->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeClick()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <!-- add department objec in our app-add-edit-dep-->
+            <!-- attr.theName-->
+            <!--
+                The ngIf directive removes or recreates a portion of the DOM tree based on
+                an {expression}. If the expression assigned to ngIf evaluates to a false value then
+                the element is removed from the DOM, otherwise a clone of the element is reinserted
+                into the DOM.
+            -->
+           <app-add-edit-dep [dep]="dep" *ngIf="ActivateAddEditDepComp">
+           </app-add-edit-dep>
+
+        </div>
+   
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="container d-flex justify-content-center">
+    <div class="card" style="width: 18rem;" *ngFor="let dataItem of DepartmentList">
+        <img class="card-img-top" src="https://99designs-start-attachments.imgix.net/alchemy-pictures/2016%2F02%2F12%2F00%2F05%2F05%2F910db405-6bd4-4a5d-bce7-c2e3135dc5e6%2F449070_WAntoneta_55908c_killing.png?auto=format&ch=Width%2CDPR&fm=png&w=600&h=600" alt="Card image cap">
+        
+        <!--
+            *ngFor is one command in angular which van be use to replicate array elemnt based on array data
+            *ngFor="let dataItem of the-Methode-You-Defind-In-YourComponent" very important
+        -->
+        <div class="card-body">
+           
+                    <!--{{dataItem.varible set-on-your-django-module}} = get the value-->
+                    
+                        <h5 >ID : {{dataItem.DepartmentId}}</h5>
+                        <p >Name : {{dataItem.DepartmentName}}</p>      
+        
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="editClick(dataItem)">
+                            Edit
+                        </button>
+                        <button type="button" class="btn btn-primary"  (click)="deletClick(dataItem)">
+                          Delete 
+                       </button>
+    
+        </div>
+      </div>
+  </div>

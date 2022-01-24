@@ -22,6 +22,9 @@ readonly PhotoUrl = "http://127.0.0.1:8000/media/";
 //instantiate HttpClient in constructor
   constructor(private http:HttpClient) { }
 
+  // NB the above function are execued in your ccc.component.ts when you want to do a request
+  //to execute the it make: this.service.theFuntionCall
+
 //  getDepList() : is a fucntion 
   getDepList():Observable<any[]>{
     //**his.http.get** : make a get request and <any[]> is the response type set to any. so it handle any type of propertie. 
@@ -46,26 +49,11 @@ readonly PhotoUrl = "http://127.0.0.1:8000/media/";
     return this.http.get<any[]>(this.APIUrl + '/employee/');
   }
 
-  addEmployee(val:any){
-    return this.http.post(this.APIUrl + '/employee/',val);
-  }
-
-  updateEmployee(val:any){
-    return this.http.put(this.APIUrl + '/employee/',val);
-  }
-
-  deleteEmployee(val:any){
-    return this.http.delete(this.APIUrl + '/employee/'+val);
-  }
+ 
 
   UploadPhoto(val:any){
     return this.http.post(this.APIUrl+'/SaveFile',val);
+
   }
-
-  getAllDepartmentNames():Observable<any[]>{
-    return this.http.get<any[]>(this.APIUrl+'/department/');
-  }
-
-
 }
 
